@@ -1,0 +1,272 @@
+/* ==========================================================================
+   ESTILOS BASE E INTERFAZ MOBILE-FIRST (Por defecto para celular)
+   ========================================================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #141414;
+  color: #ffffff;
+}
+
+.main-header {
+  background-color: #1f1f1f;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 2px solid #ff3e3e;
+}
+
+.main-header h1 {
+  font-size: 1.5rem;
+}
+
+.btn-fav-toggle {
+  background-color: #ff3e3e;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%; /* En mobile ocupa todo el ancho */
+  transition: background 0.2s;
+}
+
+.btn-fav-toggle:hover {
+  background-color: #e03535;
+}
+
+.main-content {
+  padding: 15px;
+}
+
+.search-filter-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.search-input,
+.filter-select {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background-color: #222;
+  color: white;
+  font-size: 16px;
+  width: 100%;
+}
+
+.search-input::placeholder {
+  color: #777;
+}
+
+.section-title {
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+  border-left: 4px solid #ff3e3e;
+  padding-left: 8px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  color: #aaa;
+}
+
+/* Grilla de Películas (2 columnas en móviles para optimizar espacio) */
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.movie-card {
+  background-color: #1f1f1f;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.movie-card:hover {
+  transform: scale(1.02);
+}
+
+.movie-card img {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+.movie-info {
+  padding: 10px;
+}
+
+.movie-info h3 {
+  font-size: 0.9rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 5px;
+}
+
+.rating {
+  color: #ffcc00;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+/* Modal de Detalle (Se despliega desde abajo en móviles) */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #1f1f1f;
+  width: 100%;
+  max-height: 85vh;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  overflow-y: auto;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  font-size: 1rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.modal-content img {
+  width: 100%;
+  max-height: 35vh;
+  object-fit: cover;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.modal-body h2 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.release-date,
+.rating-detail {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-bottom: 5px;
+}
+
+.overview {
+  margin-top: 15px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #ddd;
+}
+
+.btn-favorite {
+  background-color: #333;
+  color: white;
+  border: 1px solid #555;
+  padding: 12px;
+  border-radius: 8px;
+  width: 100%;
+  margin-top: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-favorite.is-fav {
+  background-color: #ffcc00;
+  color: #000;
+  border-color: #ffcc00;
+}
+
+/* ==========================================================================
+     MEDIA QUERIES (Adaptación para Tablets y Desktop / Computadoras)
+     ========================================================================== */
+@media (min-width: 768px) {
+  .main-header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px 40px;
+  }
+
+  .btn-fav-toggle {
+    width: auto;
+  }
+
+  .search-filter-container {
+    flex-direction: row;
+  }
+
+  .search-input {
+    flex: 2;
+  }
+
+  .filter-select {
+    flex: 1;
+  }
+
+  .movies-grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas en PC */
+    gap: 20px;
+  }
+
+  .modal-overlay {
+    align-items: center; /* Centrado perfecto en escritorios */
+  }
+
+  .modal-content {
+    width: 650px;
+    border-radius: 12px;
+    display: flex; /* Vista de doble columna en PC (Poster al lado del texto) */
+    max-height: 70vh;
+  }
+
+  .modal-content img {
+    width: 40%;
+    max-height: 100%;
+    object-fit: cover;
+  }
+
+  .modal-body {
+    width: 60%;
+    overflow-y: auto;
+  }
+}
