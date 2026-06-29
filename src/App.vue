@@ -1,7 +1,9 @@
 <template>
   <div class="app-container">
     <header class="main-header">
-      <h1>🎬 DaVinci Movies</h1>
+      <div class="brand">
+        <img src="./assets/logo.png" alt="Cuebuena logo" class="brand-logo" />
+      </div>
       <button @click="viewFavorites = !viewFavorites" class="btn-fav-toggle">
         {{ viewFavorites ? '🏠 Ir al Inicio' : '⭐ Mis Favoritos (' + favorites.length + ')' }}
       </button>
@@ -119,7 +121,6 @@ export default {
       selectedMovie: null,
       favorites: JSON.parse(localStorage.getItem('davinci-movies-favs')) || [],
       viewFavorites: false,
-      // Usamos tu clave corta que mostraste en la foto anterior
       apiKey: 'a4aa33f44ba6301db4533947f03d98f6', 
       baseUrl: 'https://api.themoviedb.org/3'
     };

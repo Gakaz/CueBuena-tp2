@@ -1,6 +1,3 @@
-/* ==========================================================================
-   ESTILOS BASE E INTERFAZ MOBILE-FIRST (Por defecto para celular)
-   ========================================================================== */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -20,7 +17,21 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  border-bottom: 2px solid #ff3e3e;
+  border-bottom: 2px solid #810000;
+}
+
+.main-header .brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-logo {
+  width: 150px;
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 .main-header h1 {
@@ -28,19 +39,19 @@ body {
 }
 
 .btn-fav-toggle {
-  background-color: #ff3e3e;
+  background-color: #810000;
   color: white;
   border: none;
   padding: 10px 16px;
   border-radius: 20px;
   font-weight: bold;
   cursor: pointer;
-  width: 100%; /* En mobile ocupa todo el ancho */
+  width: 100%;
   transition: background 0.2s;
 }
 
 .btn-fav-toggle:hover {
-  background-color: #e03535;
+  background-color: #810000;
 }
 
 .main-content {
@@ -54,8 +65,7 @@ body {
   margin-bottom: 20px;
 }
 
-.search-input,
-.filter-select {
+.search-input, .filter-select {
   padding: 12px;
   border-radius: 8px;
   border: 1px solid #333;
@@ -72,7 +82,7 @@ body {
 .section-title {
   margin-bottom: 15px;
   font-size: 1.3rem;
-  border-left: 4px solid #ff3e3e;
+  border-left: 4px solid #810000;
   padding-left: 8px;
 }
 
@@ -82,7 +92,6 @@ body {
   color: #aaa;
 }
 
-/* Grilla de Películas (2 columnas en móviles para optimizar espacio) */
 .movies-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -95,7 +104,7 @@ body {
   overflow: hidden;
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
 }
 
 .movie-card:hover {
@@ -127,14 +136,13 @@ body {
   font-weight: bold;
 }
 
-/* Modal de Detalle (Se despliega desde abajo en móviles) */
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(0,0,0,0.85);
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -155,7 +163,7 @@ body {
   position: absolute;
   top: 15px;
   right: 15px;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0,0,0,0.7);
   color: white;
   border: none;
   font-size: 1rem;
@@ -184,8 +192,7 @@ body {
   font-size: 1.5rem;
 }
 
-.release-date,
-.rating-detail {
+.release-date, .rating-detail {
   font-size: 0.9rem;
   color: #aaa;
   margin-bottom: 5px;
@@ -217,16 +224,13 @@ body {
   border-color: #ffcc00;
 }
 
-/* ==========================================================================
-     MEDIA QUERIES (Adaptación para Tablets y Desktop / Computadoras)
-     ========================================================================== */
 @media (min-width: 768px) {
   .main-header {
     flex-direction: row;
     justify-content: space-between;
     padding: 15px 40px;
   }
-
+  
   .btn-fav-toggle {
     width: auto;
   }
@@ -244,18 +248,18 @@ body {
   }
 
   .movies-grid {
-    grid-template-columns: repeat(4, 1fr); /* 4 columnas en PC */
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
   }
 
   .modal-overlay {
-    align-items: center; /* Centrado perfecto en escritorios */
+    align-items: center;
   }
 
   .modal-content {
     width: 650px;
     border-radius: 12px;
-    display: flex; /* Vista de doble columna en PC (Poster al lado del texto) */
+    display: flex;
     max-height: 70vh;
   }
 
